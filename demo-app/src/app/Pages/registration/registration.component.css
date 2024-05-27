@@ -1,0 +1,136 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 50;
+}
+
+.pop-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: auto;
+    background-color: white;
+    z-index: 100;
+    /* padding: 20px; */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pop-box-action {
+    text-align: right;
+}
+
+.pop-box-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #03AED2;
+    color: white;
+
+    padding: 10px 20px;
+}
+
+.close {
+
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    border-radius: 50%;
+    border: 2px solid white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.close:hover {
+    background-color: white;
+    color: #03AED2;
+}
+
+.close:active {
+    background-color: #03AED2;
+    color: white;
+}
+
+
+
+.pop-box-body>form {
+
+    display: grid;
+    grid-template-columns: 200px 1fr;
+
+    grid-gap: 20px;
+    padding: 20px;
+
+}
+
+.pop-box-body>form>label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.img-upload {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    cursor: pointer;
+
+    grid-row: 1 / 11;
+
+}
+
+.img-upload>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 200px;
+    height: 200px;
+
+    border: 2px dashed gray;
+
+}
+
+.row-1 {
+    grid-row: 1 / 2;
+}
+
+.img-upload>div>input[type="file"] {
+    background-color: transparent;
+    /* display: none; */
+    padding: 10px 20px;
+}
+
+.img-upload>div>img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.bg-h {
+    background-color: #03AED2;
+
+}

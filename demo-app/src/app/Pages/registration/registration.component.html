@@ -1,0 +1,131 @@
+<div class="backdrop"></div>
+<div class="pop-box">
+    <div class="pop-box-header">
+        <!-- <h2>Register</h2> -->
+        <h2>{{isEdit ? 'Edit' : 'Register'}}</h2>
+        <span class="close" (click)="closeRegistrationClick()">&times;</span>
+    </div>
+    <div class="pop-box-body">
+        <form action="" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <div class="form-group img-upload">
+
+                <div>
+                    <img alt="upload your photo" class="img-fluid"
+                        [src]="registrationForm.get('photo')?.value || './../../../assets/capture.png'" />
+                    <input type="file" class="form-control form-control-sm" id="photo" formControlName="photo"
+                        accept="image/*" (change)="onFileSelected($event)">
+                    <label for="photo" *ngIf="!registrationForm.get('photo')?.value">Upload Your Photo</label>
+                </div>
+            </div>
+
+
+            <div class="d-flex gap-5">
+                <div>
+                    <input type="text " class="form-control" placeholder="First Name" formControlName="firstName">
+
+                    <span
+                        *ngIf="registrationForm.get('firstName')?.invalid && registrationForm.get('firstName')?.touched"
+                        class="text-danger">Only Alphabets are allowed</span>
+                </div>
+                <input type="text " class="form-control" placeholder="Last Name" formControlName="lastName">
+            </div>
+
+            <div>
+                <div>
+                    <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                    <span *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched"
+                        class="text-danger">Invalid Email</span>
+                </div>
+            </div>
+
+            <div>
+                <input type="tel" class="form-control" placeholder="(541) 754-3010" formControlName="phone">
+            </div>
+
+            <div class="d-flex justify-content-start gap-3">
+                <label for="age">Age</label>
+                <div class="w-100">
+                    <input type="range" class="form-range" min="20" max="60" step="1" id="age" formControlName="age"
+                        [value]="registrationForm.get('age')?.value || 20">
+                    <div class="d-flex justify-content-between">
+                        <span>20</span>
+                        <span>{{registrationForm.get('age')?.value}}</span>
+                        <span>60</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+
+                <select class="form-select" aria-label="Default select example" formControlName="state">
+
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                </select>
+            </div>
+
+
+            <div>
+
+                <select class="form-select" aria-label="Default select example" formControlName="country">
+
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Australia">Australia</option>
+                </select>
+            </div>
+
+
+            <div>
+                <input type="text" class="form-control" placeholder="Address" formControlName="address">
+            </div>
+
+            <div class="d-flex gap-3 flex-column">
+                <div>
+
+                    <input type="text" class="form-control" placeholder="tags">
+                </div>
+
+                <div class="d-flex gap-5">
+                    <button type="button" class="btn btn-secondary" *ngIf="tagList.Cricket">
+                        Cricket <span class="badge badge-warning" (click)="removeTag('Cricket')">
+                            &times;
+                        </span>
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" *ngIf="tagList.Football">
+                        Football <span class="badge badge-warning" (click)="removeTag('Football')">
+                            &times;
+                        </span>
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" *ngIf="tagList.Hockey">
+                        Hockey <span class="badge badge-warning" (click)="removeTag('Hockey')">
+                            &times;
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <input type="checkbox" class="form-check-input bg-secondary" id="exampleCheck1"
+                    formControlName="Subscribe">
+                <label class="form-check" for="exampleCheck1">Subscribe to newsletter</label>
+            </div>
+
+            <div class="d-flex justify-content-end gap-3 align-items-center">
+                <button type="button" class="btn btn-light" (click)="closeRegistrationClick()">Cancel</button>
+                <button type="submit" class="btn bg-h text-light pe-3">Submit</button>
+            </div>
+
+
+        </form>
+    </div>
+</div>

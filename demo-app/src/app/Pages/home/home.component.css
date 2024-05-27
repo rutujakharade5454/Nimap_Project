@@ -1,0 +1,58 @@
+.col-12,
+.col-md-12 {
+    height: 500px;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+
+
+}
+
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+    /* color: white; */
+    /*
+    Remove font-weight and font-style properties 
+     */
+
+
+}
+
+h3 {
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.line {
+    width: 150px;
+    height: 4px;
+    background-color: skyblue;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    color: skyblue;
+
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid skyblue;
+
+    font-weight: bold;
+    font-size: 1.2rem;
+
+}
+
+.row {
+    /*
+    border up and down side only 
+     */
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-style: dashed;
+    border-image: linear-gradient(to right, skyblue, gray, skyblue) 1;
+}

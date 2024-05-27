@@ -1,0 +1,39 @@
+<div class="row justify-content-center  text-light align-items-center">
+    <div class="col-6 d-flex justify-content-center">
+        DEMO APP
+    </div>
+    <div class="col-6 d-flex gap-3">
+
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">HOME</a>
+        <a routerLink="/about" routerLinkActive="active">ABOUT US</a>
+        <a routerLink="/clients" routerLinkActive="active">CLIENTS</a>
+        <a routerLink="/employers" routerLinkActive="active">EMPLOYERS</a>
+        <a routerLink="/contact" routerLinkActive="active">CONTACT US</a>
+
+
+
+
+
+    </div>
+</div>
+
+<div class="row justify-content-center" *ngIf="isShowSearch">
+
+    <div class="col-6 col-md-6 text-center">
+        <h2 class="text-light fst-italic fs-1 roboto-light-italic text-start">
+            I'm looking for...
+        </h2>
+        <div class="mt-2 d-flex gap-2 align-items-center">
+            <input class="form-control" type="text" placeholder="Enter a Job Description">
+            <button class="btn btn-primary mt-2">SEARCH</button>
+
+        </div>
+
+
+        <button (click)="openRegistrationClick()" class="btn btn-primary mt-2 mt-5">Register</button>
+
+
+
+    </div>
+
+</div>

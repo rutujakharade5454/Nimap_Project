@@ -1,0 +1,18 @@
+<app-registration *ngIf="isOpenRegistration" (openRegistration)="openRegistration($event)" [profileData]="profileData"
+  [isEdit]="isEdit" [isShow]="isShow"></app-registration>
+
+<div class="container-fluid h-100">
+  <header [ngClass]="{'header1': heder1, 'header2': !heder1}">
+
+
+    <app-header (openRegistration)="openRegistration($event)"></app-header>
+  </header>
+
+  <main>
+    <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
+  </main>
+
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>
